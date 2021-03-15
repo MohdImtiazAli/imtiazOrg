@@ -1,0 +1,18 @@
+<aura:component controller="Q7A_Apex" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <!-- Start Attribute -->
+    <aura:attribute name="UserName" type="String" />
+    <aura:attribute name="Password" type="String" />
+   
+    <!-- End Attribute -->
+    
+    <!-- start Header -->
+    <div>
+        <lightning:input type="String" name="UserName" label="UserName" value="{!v.UserName}" /> 
+        <lightning:input type="Password" name="Password" label="Password" value="{!v.Password}" />
+    </div>
+    <div style="text-align:center; padding-top:10px;">
+    <lightning:button variant="success" label="Submit" title="Success" onclick="{! c.handleClick }"/>
+
+    </div>
+    
+</aura:component>

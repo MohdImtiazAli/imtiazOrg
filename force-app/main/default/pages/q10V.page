@@ -1,0 +1,98 @@
+<apex:page controller="q10V_Controller" >
+    
+    
+    
+    <apex:form >
+        
+        
+        
+        
+        <apex:pageBlock title="Account LookUp with Data change">
+            
+            
+            
+            <br/><br/>
+            
+            <apex:pageBlockSection >
+                <apex:panelGrid >
+                    <apex:outputLink onclick="window.open('/apex/Q6V',
+'Popup','height=400,width=1000,left=100,top=100,scrollbars=yes,toolbar=no,status=no');">
+                        Press
+                    </apex:outputLink>
+                </apex:panelGrid>
+                
+            </apex:pageBlockSection>
+            <br/><br/>
+            
+            
+            
+            <apex:outputText label="Account" value="{!accounts.name}"/>
+            <a href="javascript:window.open('https://www.google.com/')">
+                Change
+            </a>
+            
+            <br/><br/>
+            
+            <apex:pageBlockSection >
+                <apex:panelGrid >
+                    <apex:outputLink onclick="javascript:window.open('https://www.google.com/')">
+                        Change1
+                    </apex:outputLink>
+                </apex:panelGrid>
+                
+            </apex:pageBlockSection>
+            <br/><br/>
+            <apex:outputLink value="apex/Q2V?core.apexpages.request.devconsole=1">{!accounts.Name} </apex:outputLink><br/><br/>
+            
+            
+            
+            
+            <apex:commandButton value="Go To Next VF page" action="{!redirect}"/><br/><br/>
+            
+            <apex:commandButton value="Leave / MC" action="{!LeaveMC_VF}"/><br/><br/>
+            <apex:commandButton value="next page" action="{!forpage}"/><br/><br/>
+            
+            
+            
+            
+            <!-- main code starts from here -->
+            <div class="header">
+                <apex:outputPanel >
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>  for Account LookUp </td>
+                                <td> <apex:inputField value="{!custemObj.Account__c}"/> </td>
+                            </tr>
+                            
+                            
+                        </tbody>
+                    </table>
+                    
+                </apex:outputPanel>
+                
+                
+            </div>
+            
+        </apex:pageBlock>
+        
+    </apex:form>
+    <script>
+    function openLookup(baseUrl,width,modified,searchStr){
+        var receivedUrl=baseUrl;
+        var receivedWidth=width;
+        var receivedModified=modified;
+        var receivedSearchStr=searchStr;
+        var lookuptype receivedUrl.substr(receivedUrl.length-3,3);
+    }
+    </script>
+    <style>
+        .header{
+        border:4px solid Black;
+        padding:5px;
+        height:auto;
+        width:500px;
+        margin:auto;
+        }
+    </style>
+</apex:page>

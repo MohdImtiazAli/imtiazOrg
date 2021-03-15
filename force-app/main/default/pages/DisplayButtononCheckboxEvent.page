@@ -1,0 +1,14 @@
+<apex:page controller="DisplayButtononCheckboxEvent">
+    <apex:form >
+        
+       
+            <apex:commandButton value="Submit1" action="{!DisplayButtononCheckboxEvent}"/>
+       
+      
+            <apex:commandButton value="Submit2" action="{!display}"/>
+      
+        
+            <apex:commandButton value="Submit3" rendered="{!check}"/>
+      
+    </apex:form>
+</apex:page>

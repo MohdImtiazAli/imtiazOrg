@@ -1,0 +1,53 @@
+<aura:component controller="Weather_Apex" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+       <aura:attribute name="city" type="String"  />
+     <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="data" type="String"/>
+    <aura:attribute name="sortBy" type="String"/>
+    <aura:handler event="aura:waiting" action="{!c.showSpinner}"/>
+    <aura:handler event="aura:doneWaiting" action="{!c.hideSpinner}"/>
+    <aura:attribute name="Spinner" type="boolean" default="false"/>
+
+    <div class="head">
+        <h1 style="text-align: center;">You Want To Know Your City Temperature Details</h1>
+        
+    </div>
+    
+     
+     <div class="forinput"  >
+    <lightning:input type="String" name="City" label="Enter City Name" value="{!v.city}" required="true" />
+    </div>
+    
+    <div class="forbutton">
+    <lightning:button variant="success" label="Generate" title="Success" onclick="{! c.handleClick }"/>
+    </div> 
+    
+     <aura:if isTrue="{!v.Spinner}">
+                    <div aura:id="spinnerId" class="slds-spinner_container">
+                        <div class="slds-spinner--brand  slds-spinner slds-spinner--large slds-is-relative" role="alert">
+                            <span class="slds-assistive-text">Loading</span>
+                            <div class="slds-spinner__dot-a"></div>
+                            <div class="slds-spinner__dot-b"></div>
+                        </div>
+                    </div>
+                </aura:if>
+    
+   
+    <!-- handlers-->
+    
+    
+    
+    <!-- the container element determine the height of the datatable -->
+    <div class="data">
+        <lightning:datatable
+                             keyField="id"
+                             sortedBy="{!v.sortBy}"
+                             data="{!v.data}"
+                             columns="{!v.columns}"
+                             hideCheckboxColumn="true"/>
+                            
+    </div>
+    
+    
+    
+    
+</aura:component>

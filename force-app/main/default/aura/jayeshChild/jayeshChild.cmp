@@ -1,0 +1,6 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	  <aura:attribute name="onclick" type="Aura.Action"/>
+    <!--  <button class="slds-button slds-button_neutral" onclick="{!v.onclick}">Call Parent Component</button>-->
+    
+     <lightning:button variant="success" label="Call Parent Component" title="Call Parent Component" onclick="{!v.onclick}"/>
+</aura:component>

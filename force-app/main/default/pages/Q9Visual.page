@@ -1,0 +1,46 @@
+<apex:page standardController="Account">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                
+                <apex:inputField value="{!Account.Name}"/>  
+                
+                <apex:inputField value="{!Account.Phone}"/>
+                
+                <apex:inputField value="{!Account.BillingPostalCode}"/>
+                
+                <apex:inputField value="{!Account.BillingCity}"/>
+                
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!Save}" value="Save" onclick="showMessage();"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+    
+    <script>
+    function showMessage(){
+        // alert("Do you want to save it");
+        alert(
+            'Alert Title',
+            'My Alert Msg',
+            [
+                {
+                    text: 'Ask me later', 
+                    onPress: () => console.log('Ask me later pressed')
+                },
+                {
+                    text: 'Cancel',
+                    onPress: () => console.log('Cancel Pressed'),
+                    style: 'cancel',
+                },
+                {
+                    text: 'OK', 
+                    onPress: () => console.log('OK Pressed')
+                },
+            ],
+                {cancelable: false},
+                );
+                }
+                </script>
+</apex:page>

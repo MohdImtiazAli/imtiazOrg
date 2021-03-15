@@ -1,0 +1,35 @@
+<aura:component controller="Q2A_Apex" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="AccountList" type="List" access="Public" />
+    <aura:attribute name="Opportunities" type="List" description="" access="public"/>
+    <aura:attribute name="Contacts" type="List" description="" access="public"/>
+    <div class="mainDiv" >
+        <lightning:select name="select1" label="ACCOUNTS" required="false" onchange="{!c.OpportunityfromAccount}"  >
+            <option value="">choose one...</option>
+            <aura:iteration items="{!v.AccountList}" var="ac" >
+                <option value="{!ac.Id}" label="{!ac.Name}" />
+            </aura:iteration>
+            
+        </lightning:select>
+        
+    </div>
+    <div>
+        <lightning:select name="select1" label="Opportunity" required="false" >
+            
+            <aura:iteration items="{!v.Opportunities}" var="op" >
+                <option value="{!op.Id}" label="{!op.Name}" />
+            </aura:iteration>
+        </lightning:select>
+    </div>
+    
+    
+    <div class="mainDiv" >
+        <lightning:select name="select1" label="Contacts" required="false" >
+            
+            <aura:iteration items="{!v.Contacts}" var="con" >
+                <option value="{!con.Id}" label="{!con.LastName}" />
+            </aura:iteration>
+        </lightning:select>
+        
+    </div>
+</aura:component>

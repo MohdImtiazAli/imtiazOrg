@@ -1,0 +1,26 @@
+<aura:component controller="toDoListHandler" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<span>Add New Task</span>
+    <aura:attribute type="String" name="Description" />
+    <lightning:input type="String" name="Description" required="true" label="Description" value="{!v.Description}"/>
+    
+    <aura:attribute type="Date" name="DueDate" />
+    <lightning:input type="Date" name="date" label="Due Date"  required="true"  value="{!v.DueDate}"/>
+    
+    <aura:attribute type="Date" name="ReminderDate" />
+    <lightning:input type="Date" name="Reminder Date"  required="true"  label="Reminder Date" value="{!v.ReminderDate}"/>
+ <lightning:button variant="success" label="Create Task" title="Create Task" onclick="{!c.handleClick}"/>
+  
+    <aura:attribute name="toDoColumns" type="List"/>
+    <aura:attribute name="toDoData" type="List" />
+    <aura:attribute name="sortBy" type="String"/>
+    <lightning:datatable aura:id="toDoTable"
+                         keyField="Id"
+                         hideCheckboxColumn="true"
+                         columns="{!v.toDoColumns}"
+                         data="{!v.toDoData}"
+                         sortedBy="{!v.sortBy}"
+                         sortedDirection="{!v.sortDirection}"
+                       
+                         onSave="{!c.onSave}"/>
+
+</aura:component>

@@ -1,0 +1,23 @@
+<apex:page controller="forAccount2">
+    
+    <apex:form >
+    <apex:pageBlock title="AccountList">
+        
+        <h1>
+            Enter Account To Be Search
+        </h1>
+         <apex:inputText value="{!Search}" />
+        
+        <apex:commandButton value="Search" action="{!forSearch}"/>
+        <apex:commandButton value="Clear" action="{!clear}"/>
+        <apex:pageBlockTable value="{!accountList}" var="ac">
+            <apex:column value="{!ac.name}"/>
+            <apex:column value="{!ac.BillingCity}"/>
+            <apex:column value="{!ac.Phone}"/>
+            <apex:column value="{!ac.BillingPostalCode}"/>
+        </apex:pageBlockTable>
+        
+        </apex:pageBlock>
+    
+    </apex:form>
+</apex:page>

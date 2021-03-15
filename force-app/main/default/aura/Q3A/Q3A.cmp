@@ -1,0 +1,27 @@
+<aura:component controller="Q3A_Apex" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	   <!-- Handler section start -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <!-- Handler section end -->
+    
+   
+    <aura:attribute name="OpportunityList" type="List" />
+    
+    <div>
+        <lightning:select name="select1" label="List Of Opportunity"  onchange="{!c.OpportunityCloseDate}" required="false" >
+            
+            <aura:iteration items="{!v.OpportunityList}" var="op" >
+                <option value="{!op.Id}" label="{!op.Name}" />
+            </aura:iteration>
+        </lightning:select>
+    </div>
+    
+   
+    <aura:attribute name="OpportunityList1" type="sObject"/>
+    <div>
+    <lightning:input type="date" name="input1" label="Opportunity Close Date" value="{!v.OpportunityList1.CloseDate}"  />
+        
+        <!-- <ui:inputDate aura:id="Update" label="Opportunity Close Date" class="field" value="{!v.OpportunityList1.CloseDate}" displayDatePicker="true" />   -->
+    <lightning:button variant="brand" label="Update" title="Brand action" onclick="{! c.handleClick }" />    
+    </div>
+    
+</aura:component>

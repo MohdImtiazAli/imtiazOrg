@@ -1,0 +1,21 @@
+<aura:component controller="Q1A_Apex" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <!-- <aura:handler name="init" value="{!this}" action="{!c.doInit}" />-->
+    
+    <aura:attribute name="Name" type="String" />
+    <lightning:input type="String" name="Name" label="Acount Name" value="{!v.Name}" />
+    
+    <aura:attribute name="Phone" type="String" />
+    <lightning:input type="String" name="Phone" label="Phone" value="{!v.Phone}" />
+    
+    <aura:attribute name="AccountNumber" type="String" />
+    <lightning:input type="String" label="Account Number" value="{!v.AccountNumber}"/>
+    
+    <aura:attribute name="BillingCity" type="String" />
+    <lightning:input type="String" label="Billing City" value="{!v.BillingCity}" />
+    
+    <aura:attribute name="BillingCountry" type="String" />
+    <lightning:input type="String" label="Billing Country" value="{!v.BillingCountry}" />
+    
+    <lightning:button variant="success" label="Submit" title="Submit" onclick="{! c.handleClick }"/>
+    
+</aura:component>

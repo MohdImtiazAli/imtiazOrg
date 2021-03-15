@@ -1,0 +1,18 @@
+<apex:page >
+    
+    
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                <apex:outputLink onclick="window.open('https://www.google.com/',
+               'Popup','height=500,width=800,left=100,top=100,scrollbars=yes,toolbar=no,status=no');">
+                    Go To Next Page
+                </apex:outputLink>
+            </apex:pageBlockSection>
+            
+        </apex:pageBlock>
+        
+        
+        
+    </apex:form>
+</apex:page>

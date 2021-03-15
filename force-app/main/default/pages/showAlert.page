@@ -1,0 +1,37 @@
+<apex:page controller="showsuccesscontroller" >
+
+<script>
+    function onSubmit(){
+          insertac();
+    var isSubmit = confirm('Are you sure you want to Submit?');
+    if(isSubmit){
+       
+        alert('Record saved successfully');
+        
+    } else {
+        alert('Please fill out the required fields!');
+    }
+}
+    /* function onSubmit(){
+    var isSubmit = confirm('Are you sure you want to Submit?');
+    if(isSubmit){
+         insertacc();
+        alert('Record saved successfully');
+        
+    } else {
+        alert('Please fill out the required fields!');
+    }
+}*/
+    </script>    
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageMessages />
+            <apex:inputText value="{!accName}" title="NAME"/>
+            {!accName}
+            <apex:actionFunction name="insertac" action="{!insertAcc}"/>
+<apex:commandButton value="Submit" onclick="onSubmit();" styleClass="btn-custom btn-primary submitForm"/>
+        </apex:pageBlock>
+    </apex:form>
+    
+    
+</apex:page>

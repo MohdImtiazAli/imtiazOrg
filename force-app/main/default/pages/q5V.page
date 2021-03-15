@@ -1,0 +1,34 @@
+<apex:page standardController="Contact"  >
+    <apex:form id="form">
+        <apex:pageBlock id="block">
+           
+                    <apex:pageBlockSection title="For Contact" id="section">
+                        <apex:inputText value="{!Contact.LastName}" onclick="printAccountName();" id="input1"/>
+                        <apex:inputText value="{!Contact.Account.Name}" label="Contact Account Name" id="input2" />
+                        
+                    </apex:pageBlockSection>
+                    
+                    
+                    
+                </apex:pageBlock>
+                
+                
+            </apex:form>
+            
+            <script>
+            function printAccountName(){
+                
+                var ans=document.getElementById('{!$Component.form.block.section.input1}').value;
+                console.log(ans);
+                
+                document.getElementById('{!$Component.form.block.section.input2}').value=ans ;
+            }
+            </script>
+        </apex:page>
+<!--- <apex:pageblockButtons >
+                
+                <apex:commandButton value="save" action="{!save}"/>
+                    
+                    <apex:commandButton value="cancel" action="{!cancel}"/>
+                        
+                    </apex:pageblockButtons>  -->

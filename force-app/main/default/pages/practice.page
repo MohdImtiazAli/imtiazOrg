@@ -1,0 +1,8 @@
+<apex:page controller="ApexClass" docType="html-5.0">
+    <apex:form >
+        <apex:inputText value="{!Name}"/>
+        <apex:input value="{!inputValue}" id="theTextInput"/>
+        
+            <apex:commandButton value="Save" action="{!Call}"/>
+    </apex:form>
+</apex:page>

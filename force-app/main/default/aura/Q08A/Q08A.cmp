@@ -1,0 +1,18 @@
+<aura:component controller="Q08A_Apex" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+ 
+    <aura:attribute name="AccountColumns" type="List" />
+    <aura:attribute name="AccountData" type="Object" />
+    <aura:attribute name="sortBy" type="String" />
+    <aura:attribute name="sortDirection" type="String" />    
+    
+     <lightning:datatable aura:id="accountTableid"
+                         keyField="Id"
+                         hideCheckboxColumn="true"
+                         columns="{!v.AccountColumns}"
+                         data="{!v.AccountData}"
+                         sortedBy="{!v.sortBy}"
+                         sortedDirection="{!v.sortDirection}"
+                         onsort="{!c.handleSort}"/>
+</aura:component>

@@ -1,0 +1,8 @@
+<apex:page standardController="Account" renderAs="PDF">
+    
+  <h1 style="font-size: 70px; color: #009900">Hello {!record.Id}!</h1>
+    <form>
+         <a href="https://cloudanalogy-4a-dev-ed--c.visualforce.com/apex/youtube1?core.apexpages.request.devconsole=1">download</a>
+    </form>
+    
+</apex:page>

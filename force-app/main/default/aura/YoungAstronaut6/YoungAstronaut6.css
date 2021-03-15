@@ -1,0 +1,6 @@
+.THIS.wrapper1{width: 300px; border: none 0px RED; overflow-x: scroll; overflow-y:hidden;}
+.THIS.wrapper2{width: 300px; border: none 0px RED; overflow-x: scroll; overflow-y:hidden;}
+.THIS.wrapper1{height: 20px; }
+.THIS.wrapper2{height: 100px; }
+.THIS.div1 {width:1000px; height: 20px; }
+.THIS.div2 {width:1000px; height: 100px; background-color: #88FF88; overflow: auto;}

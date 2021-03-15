@@ -1,0 +1,6 @@
+<apex:component >
+    <apex:attribute name="xFactor" description="This is the value for the component." type="String" />
+    <apex:attribute name="yFactor" description="This is the value for the component." type="String" />
+    <apex:attribute name="selectedIds" description="This is the value for selectedIds component." type="String" />
+   
+        </apex:component>

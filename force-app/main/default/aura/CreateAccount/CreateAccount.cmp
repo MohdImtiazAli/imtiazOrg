@@ -1,0 +1,16 @@
+<aura:component controller="CreateAccounts" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <aura:attribute name="createAcc" type="Account" default="{'sObjectType' : 'Account'}"/>
+    
+    <!-- Handler section start -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <!-- Handler section end -->
+    
+    <div class="mainDiv" >
+        <lightning:input   type="text" name="input1" value="{!v.createAcc.Name}" label="Enter Name" />
+        
+         <lightning:button variant="brand" label="Brand" title="Brand action" onclick="{! c.handleClick }" />
+    </div>
+    
+    
+</aura:component>

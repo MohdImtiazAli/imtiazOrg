@@ -1,0 +1,12 @@
+<aura:component controller="AccountContact_Controller" access="global" >
+     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+     <aura:attribute name="contactList" type="Contact[]"/>
+    <div>
+        <lightning:select name="select" label="Account Data">
+            <option>choose one...</option>
+            <aura:iteration items="{!v.contactList}" var="con">
+                <option text="{!con.LastName}"></option>
+            </aura:iteration>
+        </lightning:select>
+    </div>
+</aura:component>

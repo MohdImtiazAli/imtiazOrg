@@ -1,0 +1,41 @@
+<aura:component controller="AccountPracticeApex"   implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="accountList" type="List"/>
+    
+    <lightning:select name="select1" label="List Of Account" >
+        <option value="1,2">choose one...</option>
+        <aura:iteration items="{!v.accountList}" var="ac">
+        <option value="{!ac.Id}" label="{!ac.Name}"></option>
+        </aura:iteration>
+
+    </lightning:select>
+    
+    <aura:attribute name="Name" type="String" />
+    <lightning:input type="String" name="Name" label="Name" value="{!v.Name}" />
+    
+    <aura:attribute name="Phone" type="String" />
+    <lightning:input type="String" name="Phone" label="Mobile Number" value="{!v.Phone}" />
+    
+    <aura:attribute name="showData" type="Account" default="" />
+    
+    
+    
+    <br/> 
+    <lightning:button  label="Submit" title="Submit" onclick="{!c.handleClick}" />
+    <br/>
+   <div class="row">
+        <h2 class="header">Output</h2>
+        <lightning:textarea name="input1" placeholder="{!v.data}" />
+         
+    </div>
+    <br/>
+    
+    <label>{!v.showData.Name}</label><br/> <br/>
+    <br/>
+    <aura:attribute name="data" type="String" default="" />
+    <label>{!v.data}</label>
+    
+    
+    
+    
+</aura:component>

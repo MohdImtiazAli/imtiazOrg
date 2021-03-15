@@ -1,0 +1,22 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    
+    
+    
+    <aura:attribute name="aura_action" type="String"/>
+    
+    
+    <lightning:card>
+        
+        <div  class="slds-align_absolute-center" style="color:Blue;Font-size:40Px;text-align:centre">
+            {!v.aura_action}
+        </div>
+    </lightning:card>  
+    <br></br>
+     <div  class="slds-align_absolute-center">
+    <c:jayeshChild  onclick="{!c.parentAction}"/>
+    
+    </div>
+    
+    
+</aura:component>

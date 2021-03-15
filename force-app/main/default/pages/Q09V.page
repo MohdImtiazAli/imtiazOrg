@@ -1,0 +1,27 @@
+<apex:page standardController="Account" extensions="forMessages">
+    
+    <apex:form >
+   <apex:pageblock >
+     <!-- <apex:pageMessages id="showmsg"></apex:pageMessages>-->
+        <apex:pageBlockSection >
+           <apex:inputText value="{!accounts.name}"/>
+           <apex:inputText value="{!accounts.NumberOfEmployees}"/>
+          <apex:inputText value="{!accounts.phone}"/>
+           <apex:inputText value="{!accounts.BillingCity}"/>
+          
+            <!-- <apex:commandButton value="Save" action="{!save}" style="width:90px"   onclick="Messages();"/>-->
+             <apex:commandButton action="{!Save}" value="Save" onclick="Messages();"/>
+        </apex:pageBlockSection>
+    </apex:pageblock>
+ </apex:form>
+    
+    <script>
+    function Messages(){
+    alert("Do you want to insert your account");
+    }
+    </script>
+    
+ 	
+    
+    
+</apex:page>

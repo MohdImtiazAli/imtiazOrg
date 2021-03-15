@@ -1,0 +1,9 @@
+<apex:page standardController="Account" >
+    <apex:form >
+        <apex:pageBlock >
+            <p> {!Account.name}</p>
+            <apex:detail /> 
+        </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

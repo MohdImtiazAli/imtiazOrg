@@ -1,0 +1,13 @@
+<apex:page controller="JeetV_Controller2" >
+    <apex:form >
+    <apex:pageBlock title="AccountList">
+         <apex:commandButton action="{!showAccount}" value="Show AccountList" reRender="blockTable"/>
+         <apex:commandButton action="{!showPhone}" value="Show Phone" reRender="blockTable"/>
+    <apex:pageBlockTable value="{!accountList}" var="ac" id="blockTable">
+        <apex:column value="{!ac.Name}"/>
+        <apex:column value="{!ac.Phone}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+       
+        </apex:form>
+</apex:page>

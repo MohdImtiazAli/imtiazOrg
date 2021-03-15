@@ -1,0 +1,32 @@
+<apex:page controller="muActionFunController" >
+
+<script>
+    
+       function myJavascriptFunc()
+{
+alert('Entered Javascript') ;
+CallApexMethod() ;
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}
+    </script>
+<apex:form >
+    <apex:inputText value="{!accName}" title="NAME"/>
+<apex:actionFunction name="CallApexMethod" action="{!controllerMethod}" rerender="none"/>
+<apex:pageBlock >
+<apex:pageBlockButtons >
+<apex:commandButton value="Save" onclick="myJavascriptFunc();"/>
+</apex:pageBlockButtons>
+</apex:pageBlock>
+</apex:form>
+
+
+
+</apex:page>

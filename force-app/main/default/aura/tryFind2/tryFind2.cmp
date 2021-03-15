@@ -1,0 +1,24 @@
+<aura:component controller="tryFind2_controller" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<aura:attribute name="contactList" type="List" description="" access="public"/>
+    <aura:attribute name="Accounts" type="Account" description="" access="public"/>
+    
+    <!-- Handler section start -->
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <!-- Handler section end -->
+    
+    <div class="mainDiv" >
+      <!--    <lightning:select name="selectItem" label="Contacts" aura:id="biro"  onchange="{!c.getDetail}">-->
+         <lightning:select name="select1" label="Contacts" required="false" onchange="{!c.getContactAccount}">
+        <option value="">choose one...</option>
+             <aura:iteration items="{!v.contactList}" var="con" >
+                 <option value="{!con.Id}" label="{!con.Name}" />
+                 </aura:iteration>
+       
+    </lightning:select>
+    
+    </div>
+    <div>
+        <h1> "{!v.Accounts.Name}" </h1>
+    </div>
+    
+</aura:component>

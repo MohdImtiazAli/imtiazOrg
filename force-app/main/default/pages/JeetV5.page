@@ -1,0 +1,18 @@
+<apex:page controller="JeetV_Controller5">
+    <apex:form >
+        <apex:pageBlock title="For Search">
+            <apex:inputText value="{!keyWord}"/>
+            <apex:commandButton value="Search" action="{!search}" />
+            <apex:pageBlockTable value="{!accountList}" var="ac">
+                
+                <apex:column value="{!ac.Name}"/>
+                <apex:column value="{!ac.Phone}"/>
+                
+            </apex:pageBlockTable>
+            
+             
+            
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>

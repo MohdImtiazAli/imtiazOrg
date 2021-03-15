@@ -1,0 +1,31 @@
+<apex:page controller="Q7VisualHandler" docType="html-5.0">
+    <apex:form id="form">
+        <apex:pageBlock id="block">
+            
+            <apex:pageBlockSection id="section">
+                <apex:input type="date" value="{!Data}" onchange="showDate();" id="input"/>
+            </apex:pageBlockSection>
+            
+        </apex:pageBlock>
+    </apex:form>
+    <script>
+     
+    
+    function showDate(){
+        console.log("inside");
+        var ans=document.getElementById('{!$Component.form.block.section.input}').value;
+        //var ans2=document.getElementById('{!$Component.form.block.table}').var;
+        console.log(ans);
+     
+        var myList = new Array();
+        myList = '{!DateList}';
+        console.log(myList);
+        if(myList.includes(ans.toString())){
+            alert("Close date is near");
+        }
+    }
+    
+    
+    </script>
+    
+</apex:page>

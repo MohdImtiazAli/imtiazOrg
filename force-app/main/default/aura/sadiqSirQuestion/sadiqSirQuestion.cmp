@@ -1,0 +1,66 @@
+<aura:component controller="SadiqSirDelete" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	
+     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    
+    
+     <aura:handler name="forDeletingRow" event="c:forDeletingRow" action="{!c.deleteRow}" />
+     <aura:handler name="AddRow" event="c:forAddingRow" action="{!c.AddRow}"/>
+    
+     <aura:attribute name="opportunityList" type="Opportunity[]"/>
+    <button class="slds-button slds-button_brand" onclick="{!c.AddRow2}">Add Row22</button>
+    <aura:iteration items="{!v.opportunityList}">
+      
+    </aura:iteration>
+    <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+        <thead>
+            <tr class="slds-text-title_caps">
+                <th scope="col">
+                    <div class="slds-truncate">S.No</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Name">Name</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Close Date">Close Date</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Stage Name">Stage Name</div>
+                </th>
+                <th scope="col">
+                    <div class="slds-truncate" title="Stage Name">Action</div>
+                </th>
+            </tr>
+        </thead> 
+        <aura:iteration items="{!v.opportunityList}" var="item" indexVar="index">
+        <tbody>
+          
+             
+            
+                
+                <!--c:forRowShow OpportunityInstance="{!item}" rowIndex="{!index}" /--><!-- child-->
+                <tr class="slds-text-title_caps">
+        <td>
+            {!v.rowIndex + 1}
+        </td>
+        <td>
+            <ui:inputText class="slds-input" value="{!v.item.Name}"/>
+        </td>
+        <td>
+            <ui:inputText class="slds-input" value="{!v.item.CloseDate}"/>
+        </td>
+        <td>
+            <ui:inputText class="slds-input" value="{!v.item.StageName}"/>
+        </td>
+                </tr>
+                    
+                 
+            
+        </tbody>
+        </aura:iteration>
+        
+        <br/>
+     
+    <button class="slds-button slds-button_brand" onclick="{!c.Save}">Save</button>
+    </table>
+</aura:component>

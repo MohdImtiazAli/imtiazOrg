@@ -1,0 +1,16 @@
+<apex:page controller="JeetV_Controller">
+    <h1>
+        {!ForMessage}
+    </h1><br/>
+    <h1>
+        {!ForAccount.Name}<br/>
+         {!ForAccount.Phone}
+    </h1>
+    <apex:pageBlock title="AccountList">
+        <apex:pageBlockTable value="{!accountList}" var="ac">
+            <apex:column value="{!ac.Name}"/>
+            <apex:column value="{!ac.NumberOfEmployees}"/>
+        
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

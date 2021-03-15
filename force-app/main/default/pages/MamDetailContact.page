@@ -1,0 +1,11 @@
+<!--
+<apex:page standardController="Contact">
+    
+    <apex:detail relatedList="true"/>
+        
+</apex:page>
+-->
+<apex:page standardController="Account">
+    {! Account.Name }
+    <apex:detail />
+</apex:page>

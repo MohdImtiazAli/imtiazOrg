@@ -1,0 +1,34 @@
+<aura:component controller="Q5_Apex" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="selectedObject" type="String"   />
+    <aura:attribute name="objectList" type="String[]"   />
+     <div>
+        <lightning:select name="select1" label="List Of All Objects"  aura:id="objid"  onchange="{!c.findField}" required="false"   >
+            
+            <aura:iteration items="{!v.objectList}" var="obj" indexVar="indx">
+                <option value="{!obj}" label="{!obj}" />
+            </aura:iteration>
+        </lightning:select>
+    </div>
+     
+    <aura:attribute name="objects" type="String[]" />
+    <div>
+    <lightning:select name="select1" label="List of Objects Field"  onchange="{!c.findFieldType}">
+        <aura:iteration items="{!v.objects}" var="ob"   indexVar="indx"> 
+            <option value="{!ob}" label="{!ob}"></option>
+        </aura:iteration>
+        </lightning:select>
+    </div>
+    
+     <aura:attribute name="Field" type="String[]" />
+    
+    <div>
+    <lightning:select name="select1" label="Field Type" >
+        <aura:iteration items="{!v.Field}" var="ob"> 
+            <option value="{!ob.id}" label="{!ob}"></option>
+        </aura:iteration>
+        </lightning:select>
+    </div>
+    
+</aura:component>

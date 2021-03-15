@@ -1,0 +1,29 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	
+  <!--  
+    <aura:attribute type="String" name="Name" />
+    <lightning:input type="String" name="Name" required="true" label="Name" value="{!v.Name}"/>
+    
+    <aura:attribute type="Date" name="CloseDate" />
+    <lightning:input type="Date" name="CloseDate" label="Close Date"  required="true"  value="{!v.CloseDate}"/>
+    
+    <aura:attribute type="String" name="StageName" />
+    <lightning:input type="String" name="StageName"  required="true"  label="Stage Name" value="{!v.StageName}"/>
+-->
+     <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+     <aura:attribute name="oppColumns" type="List"/>
+    <aura:attribute name="oppData" type="List" />
+    <aura:attribute name="sortBy" type="String"/>
+    
+    
+    <lightning:datatable aura:id="toDoTable"
+                         keyField="Id"
+                         hideCheckboxColumn="true"
+                         columns="{!v.oppColumns}"
+                         data="{!v.oppData}"
+                         sortedBy="{!v.sortBy}"
+                         sortedDirection="{!v.sortDirection}"
+                       
+                         onSave="{!c.onSave}"/>
+</aura:component>

@@ -1,0 +1,20 @@
+<aura:component controller="Q9A_Apex" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="AccountList" type="List" />
+    
+    <div>
+        <lightning:select name="select1" label="List Of Account"  aura:id="AccountId"   required="false" >
+            
+            <aura:iteration items="{!v.AccountList}" var="ac" >
+                <option value="{!ac.Id}" label="{!ac.Name}" />
+            </aura:iteration>
+        </lightning:select>
+    </div>
+    
+    
+    <aura:attribute name="LastName" type="String"  />
+     <div>
+    <lightning:input type="String" label="LastName" value="{!v.LastName}" />
+    <lightning:button variant="brand" label="Update" title="Brand action" onclick="{! c.handleClick }" />    
+      </div>
+</aura:component>

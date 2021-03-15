@@ -1,0 +1,33 @@
+<apex:page controller="Young6Apex" >
+    
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection >
+                 <a href="javascript:window.open('{!ACC.Detail__c}')" target="!_blank">
+                go go
+            </a>
+          <a href="javascript:window.location.replace('http://www.w3schools.com')">Same Page No Needs Of _Blank</a>
+       <a href="javascript:window.location.replace('{!ACC.Detail__c}')">Same Page No Need Of _Blank</a>
+
+                
+                
+                
+                <apex:CommandLink Value="GO TO Next Page" onclick="window.open('https://www.google.com/')"/>
+                <apex:CommandLink Value="GO TO Same Page With PopUp " onclick="SamePage('https://www.google.com/')"/>
+                <a href="javascript:window.open('https://www.google.com/')">
+                Change
+            </a>
+            </apex:pageBlockSection>
+            
+        </apex:pageBlock>
+        
+    </apex:form>
+    <script language="javascript" type="text/javascript">
+    
+    function SamePage(url) {
+        newwindow=window.open(url,'Malika','height=500,width=750');
+        if (window.focus) {newwindow.focus()}
+        return false;
+    }
+    </script>
+</apex:page>

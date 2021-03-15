@@ -1,0 +1,16 @@
+<apex:page controller="forAccount">
+    <apex:form >
+         <apex:commandButton value="Go" action="{!redirectToMyVF}"/>
+        <apex:pageBlock title="List Of 100 Account">
+            <apex:pageBlockTable value="{!AccountList}" var="ac">
+                <apex:column value="{!ac.name}"/>
+                <apex:column value="{!ac.Phone}"/>
+            </apex:pageBlockTable>
+            
+        </apex:pageBlock>
+        
+       
+    </apex:form>
+    
+    
+</apex:page>

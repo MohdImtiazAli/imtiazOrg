@@ -1,0 +1,25 @@
+<apex:page id="myRerender" controller="accounts">
+    <apex:includeScript value="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" />
+    
+    <script>
+       $(document).ready(function() {
+        $('.openInPopup a').click(function(event) {
+            event.preventDefault();
+            window.open($(this).attr('href'));
+        });
+    });
+    </script>
+
+    <apex:form >
+       <apex:pageBlock >
+       <apex:outputPanel styleClass="openInPopup">
+          <apex:pageBlockSection >
+               <apex:outputField value="{!Acc.name}"/>
+               
+              <apex:outputfield value="{!Acc.OwnerId}" />
+ 
+           </apex:pageBlockSection>
+           </apex:outputPanel>
+       </apex:pageBlock>
+    </apex:form>
+</apex:page>

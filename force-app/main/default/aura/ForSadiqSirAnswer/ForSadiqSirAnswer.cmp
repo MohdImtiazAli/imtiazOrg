@@ -1,0 +1,102 @@
+<aura:component controller="ForSadiqSirAnswerHandler" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <aura:attribute name="OpportunityList" type="Opportunity[]"/>
+    <aura:attribute name="PickList" type="String[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <div class="slds-float_right slds-p-bottom_small">
+        <h1 class="slds-page-header__title">Add Row 
+            <lightning:buttonIcon iconName="utility:add"  size="large" variant="bare" alternativeText="Add" onclick="{!c.addRow}"/>
+        </h1>
+    </div>
+    
+    
+    
+    <div class="container-fluid">
+        <table  class="slds-table slds-table_bordered slds-table_cell-buffer">
+            <thead>
+                
+                
+                <tr class="slds-text-title_caps">
+                    <th scope="col">
+                        <div class="slds-truncate"> S.No</div>
+                    </th>
+                    
+                    
+                    <th scope="col">
+                        <div class="slds-truncate" title="Opportunity Name" >Opportunity Name</div>
+                    </th>
+                    
+                    <th scope="col">
+                        <div class="slds-truncate" title="Close Date">Close Date</div>
+                    </th>
+                    
+                    <th scope="col">
+                        <div class="slds-truncate" title="Stage Name">Stage Name</div>
+                    </th>
+                    
+                    <th scope="col">
+                        <div class="slds-truncate" title="Action">Action</div>
+                    </th>                
+                    
+                    
+                </tr>
+                
+            </thead>
+            
+            
+            
+            <tbody>
+                <aura:iteration items="{!v.OpportunityList}" var="op" indexVar="index">
+                    <tr>
+                        <td>
+                            {!index+1}
+                            
+                        </td>
+                        
+                        
+                        <td>
+                            <lightning:input name="OpportunityName" type="text"  maxlength="50"  value="{!op.Name}" />
+                        </td>
+                        
+                        
+                        <td>
+                            <lightning:input name="OpportunityCloseDate" type="Date"  maxlength="50"  value="{!op.CloseDate}" />
+                        </td>
+                        
+                        
+                        <td>
+                            <lightning:select  aura:id="select1-id" onchange=""  label=""  value="{!op.StageName}">
+                                <option >None</option>
+                                <aura:iteration items="{!v.PickList}" var="item">
+                                    <option value="{!item}" text="{!item}"></option>
+                                </aura:iteration>
+                            </lightning:select>
+                            
+                        </td>
+                        
+                        <td>
+                            <a onclick="{!c.removeRow}" data-record="{!index}">
+                                <lightning:icon iconName="utility:delete" size="small" alternativeText="Delete"/>
+                                <span class="slds-assistive-text">Delete</span>
+                            </a>
+                        </td> 
+                        
+                        
+                        
+                    </tr>
+                    
+                </aura:iteration> 
+                
+            </tbody>
+            
+            
+        </table>
+        <div class="slds-align_absolute-center slds-p-top_small">
+            <lightning:button variant="brand" label="Cancel" title="Brand action" onclick="{!c.Cancel}" />
+            <lightning:button variant="success" label="Submit" title="Success" onclick="{! c.Save }"/>
+        </div>
+        
+        
+    </div>
+</aura:component>
